@@ -11,27 +11,49 @@
   <link rel="icon" href="//cdn.localsaver.com/img/favicon.ico" type="image/ico" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet">
   
   <style type="text/css">
+	body{
+		font-family: 'Open Sans', Helvetica, Tahoma, sans-serif;
+	}
+	h1{
+		font-size: 48px; 
+	}
+	h2{
+		font-size: 26px;
+		color: #666;
+	}
 	#header{
 		background: #097ab3;
 		padding: 15px 0px;
-		font-size:18px;
+		font-size: 18px;
 	}
-
-	.row.no-gutters > [class^="col-"],
-	.row.no-gutters > [class*=" col-"] {
-		padding-right: 0;
-		padding-left: 0;
+	.row.no-gutters > [class^="col-"], .row.no-gutters > [class*=" col-"]{
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	.deal > .panel-default > .panel-heading{
+		background-image: none;
+		background: #fff;
+	}
+	.location{
+		font-size:16px;
+		font-weight:700;
+	}
+	#deals .badge{
+		background: #097ab3;
+		color: #fff;
 	}
   </style>
  </head>
  <body>
   
-	<div class="container-fluid">
+	<div class="container-fluid text-center">
+	
 		<div class="row no-gutters">
 			<div class="col-xs-12">
-				<div id="header" class="text-center">
+				<div id="header">
 					<img src="images/localsaver-logo.png" alt="Local Saver" />
 				</div>
 			</div>
@@ -39,11 +61,83 @@
 		
 		<div class="row">
 			<div class="col-xs-12">
-  
 				<h1>Coupons &amp; Deals near You</h1>
-  
-				<p>+3,600 Matches Found</p>
+				<h2>+3,600 Matches Found</h2>
 			</div>
+		</div>
+		
+		<div class="row" id="deals">
+		
+			<div class="col-xs-12 col-sm-6 col-md-4 deal" data-deal-id="">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="location pull-left" data-location=""><img src="images/pin.png" alt="" /> Bellevue, WA</span>
+						<span class="distance pull-right" data-distance="">3.3 mi</span>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel-body">
+						<div class="deal-image">
+							<img src="images/tile1-main.jpg" alt="" class="img-responsive" />
+						</div>
+						<h3>Nutritionists</h3>
+						<div class="well">Sound Nourishment Nutritional Counseling</div>
+						<ul class="list-group">
+							<li class="list-group-item">20% off Regular Price for Cash-Paying Clients</li>
+							<li class="list-group-item">Refer a Friend, Get 25% Off Next Visit</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix visible-xs-block"></div>
+			
+			<div class="col-xs-12 col-sm-6 col-md-4 deal" data-deal-id="">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="location pull-left" data-location=""><img src="images/pin.png" alt="" /> Seattle, WA</span>
+						<span class="distance pull-right" data-distance="">12.9 mi</span>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel-body">
+						<div class="deal-image">
+							<img src="images/tile2-main.jpg" alt="" class="img-responsive" />
+						</div>
+						<h3>Indian Resturaunts</h3>
+						<div class="well">Maharaja Cusine of India</div>
+						<ul class="list-group">
+							<li class="list-group-item">$15 certificate for $6<br />A 60% Savings!</li>
+							<li class="list-group-item">$25 certificate for $10<br />A 60% Savings!</li>
+							<li class="list-group-item text-primary">See All <span class="badge">4</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix visible-xs-block visible-sm-block"></div>
+			
+			<div class="col-xs-12 col-sm-6 col-md-4 deal" data-deal-id="">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<span class="location pull-left" data-location=""><img src="images/pin.png" alt="" /> Seattle, WA</span>
+						<span class="distance pull-right" data-distance="">8.4 mi</span>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel-body">
+						<div class="deal-image">
+							<img src="images/tile3-main.jpg" alt="" class="img-responsive" />
+						</div>
+						<h3>Toy Store</h3>
+						<div class="well">Toys R Us</div>
+						<ul class="list-group">
+							<li class="list-group-item">15% OFF all Bathtubs &amp; Bath Accessories</li>
+							<li class="list-group-item">20% OFF all Humidifiers, Vaporizers &amp; Air Purifiers</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix visible-xs-block visible-md-block"></div>
+			
 		</div>
 		
 	</div>
