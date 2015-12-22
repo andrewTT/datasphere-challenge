@@ -228,8 +228,37 @@
  
  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
  <script>
- $(document).ready(function(){
-
- });
+	var userData = {page: 1};
+	$(document).ready(function(){
+		var fetchResults = function(){
+			$.ajax({
+				url: "http://codingchallenge.datasphere.com:8084/getbusinesses/",
+				dataType: "jsonp",
+				data:{
+					location: this.latitude + "," + this.longitude,
+					pg: this.page,
+					pz: 12,
+					callback: "results"
+				},
+				success: function(response){
+					userData.businesses = response.businesses;
+					userData.isNextPage = response.nextPage;
+					userData.count = response.count;
+				}
+			});
+		},
+		setPosition = function(pos){
+			userData.latitude = pos.coords.latitude;
+			userData.longitude = pos.coords.longitude;
+			fetchResults.call(userData);
+		},
+		positionError = function(err){
+			//geolocation didn't work or isn't supported
+		};
+   
+		if ("geolocation" in navigator){
+			navigator.geolocation.getCurrentPosition(setPosition, positionError, {timeout:5000});
+		}
+	});
  </script>
 </html>
